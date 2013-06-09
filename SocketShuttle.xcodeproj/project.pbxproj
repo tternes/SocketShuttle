@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		338D093A1764040F0006496F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 338D09321764040F0006496F /* Reachability.m */; };
 		4DE9EB69170D870A005B295E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE9EB68170D870A005B295E /* Foundation.framework */; };
 		4DE9EB6E170D870A005B295E /* KATSocketShuttle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DE9EB6D170D870A005B295E /* KATSocketShuttle.h */; };
 		4DE9EB70170D870A005B295E /* KATSocketShuttle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9EB6F170D870A005B295E /* KATSocketShuttle.m */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		338D09311764040F0006496F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		338D09321764040F0006496F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4DE9EB65170D870A005B295E /* libSocketShuttle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSocketShuttle.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE9EB68170D870A005B295E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4DE9EB6D170D870A005B295E /* KATSocketShuttle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KATSocketShuttle.h; sourceTree = "<group>"; };
@@ -44,6 +47,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		338D090E1764040F0006496F /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				338D09311764040F0006496F /* Reachability.h */,
+				338D09321764040F0006496F /* Reachability.m */,
+			);
+			name = Reachability;
+			path = "Third-Party/Reachability";
+			sourceTree = SOURCE_ROOT;
+		};
+		338D0941176404160006496F /* Third-Party */ = {
+			isa = PBXGroup;
+			children = (
+				338D090E1764040F0006496F /* Reachability */,
+			);
+			name = "Third-Party";
+			sourceTree = "<group>";
+		};
 		4DE9EB5C170D870A005B295E = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +93,7 @@
 		4DE9EB6A170D870A005B295E /* SocketShuttle */ = {
 			isa = PBXGroup;
 			children = (
+				338D0941176404160006496F /* Third-Party */,
 				4DE9EB6D170D870A005B295E /* KATSocketShuttle.h */,
 				4DE9EB6F170D870A005B295E /* KATSocketShuttle.m */,
 			);
@@ -130,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE9EB70170D870A005B295E /* KATSocketShuttle.m in Sources */,
+				338D093A1764040F0006496F /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +216,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/KATSocketShuttle.dst;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Third-Party/SocketRocket/";
 				PRODUCT_NAME = SocketShuttle;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -202,8 +227,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/KATSocketShuttle.dst;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Third-Party/SocketRocket/";
 				PRODUCT_NAME = SocketShuttle;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
