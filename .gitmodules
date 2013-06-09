@@ -1,0 +1,6 @@
+[submodule "Third-Party/Reachability"]
+	path = Third-Party/Reachability
+	url = https://github.com/tonymillion/Reachability.git
+[submodule "Third-Party/SocketRocket"]
+	path = Third-Party/SocketRocket
+	url = git://github.com/square/SocketRocket.git
