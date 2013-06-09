@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		338D093A1764040F0006496F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 338D09321764040F0006496F /* Reachability.m */; };
 		4DE9EB69170D870A005B295E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE9EB68170D870A005B295E /* Foundation.framework */; };
 		4DE9EB6E170D870A005B295E /* KATSocketShuttle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DE9EB6D170D870A005B295E /* KATSocketShuttle.h */; };
 		4DE9EB70170D870A005B295E /* KATSocketShuttle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9EB6F170D870A005B295E /* KATSocketShuttle.m */; };
-		E52EE98901604830B864425A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8D95BBE37E44AA9A8B4C43 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,12 +27,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		338D09311764040F0006496F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		338D09321764040F0006496F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4DE9EB65170D870A005B295E /* libSocketShuttle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSocketShuttle.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE9EB68170D870A005B295E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4DE9EB6D170D870A005B295E /* KATSocketShuttle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KATSocketShuttle.h; sourceTree = "<group>"; };
 		4DE9EB6F170D870A005B295E /* KATSocketShuttle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KATSocketShuttle.m; sourceTree = "<group>"; };
-		70BAC8C8B1AA4407A15CDAC3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		9A8D95BBE37E44AA9A8B4C43 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,20 +41,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE9EB69170D870A005B295E /* Foundation.framework in Frameworks */,
-				E52EE98901604830B864425A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		338D090E1764040F0006496F /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				338D09311764040F0006496F /* Reachability.h */,
+				338D09321764040F0006496F /* Reachability.m */,
+			);
+			name = Reachability;
+			path = "Third-Party/Reachability";
+			sourceTree = SOURCE_ROOT;
+		};
+		338D0941176404160006496F /* Third-Party */ = {
+			isa = PBXGroup;
+			children = (
+				338D090E1764040F0006496F /* Reachability */,
+			);
+			name = "Third-Party";
+			sourceTree = "<group>";
+		};
 		4DE9EB5C170D870A005B295E = {
 			isa = PBXGroup;
 			children = (
 				4DE9EB6A170D870A005B295E /* SocketShuttle */,
 				4DE9EB67170D870A005B295E /* Frameworks */,
 				4DE9EB66170D870A005B295E /* Products */,
-				70BAC8C8B1AA4407A15CDAC3 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				4DE9EB68170D870A005B295E /* Foundation.framework */,
-				9A8D95BBE37E44AA9A8B4C43 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,6 +93,7 @@
 		4DE9EB6A170D870A005B295E /* SocketShuttle */ = {
 			isa = PBXGroup;
 			children = (
+				338D0941176404160006496F /* Third-Party */,
 				4DE9EB6D170D870A005B295E /* KATSocketShuttle.h */,
 				4DE9EB6F170D870A005B295E /* KATSocketShuttle.m */,
 			);
@@ -91,11 +107,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DE9EB73170D870A005B295E /* Build configuration list for PBXNativeTarget "SocketShuttle" */;
 			buildPhases = (
-				68FDE254D64E404E85DAF4FA /* Check Pods Manifest.lock */,
 				4DE9EB61170D870A005B295E /* Sources */,
 				4DE9EB62170D870A005B295E /* Frameworks */,
 				4DE9EB63170D870A005B295E /* CopyFiles */,
-				A50BF0E2C37440DFB8536C9C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,43 +146,13 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		68FDE254D64E404E85DAF4FA /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
-		};
-		A50BF0E2C37440DFB8536C9C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		4DE9EB61170D870A005B295E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4DE9EB70170D870A005B295E /* KATSocketShuttle.m in Sources */,
+				338D093A1764040F0006496F /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,21 +214,23 @@
 		};
 		4DE9EB74170D870A005B295E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70BAC8C8B1AA4407A15CDAC3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/KATSocketShuttle.dst;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Third-Party/SocketRocket/";
 				PRODUCT_NAME = SocketShuttle;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		4DE9EB75170D870A005B295E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70BAC8C8B1AA4407A15CDAC3 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/KATSocketShuttle.dst;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Third-Party/SocketRocket/";
 				PRODUCT_NAME = SocketShuttle;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
