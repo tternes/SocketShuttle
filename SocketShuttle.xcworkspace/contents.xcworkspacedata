@@ -4,7 +4,4 @@
    <FileRef
       location = "group:SocketShuttle.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Third-Party/SocketRocket/SocketRocket.xcodeproj">
-   </FileRef>
 </Workspace>
