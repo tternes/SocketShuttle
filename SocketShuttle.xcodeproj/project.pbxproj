@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330BDCB0176594CE009BD559 /* libSocketRocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 338D094C17640A260006496F /* libSocketRocket.a */; };
 		338D093A1764040F0006496F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 338D09321764040F0006496F /* Reachability.m */; };
 		4DE9EB69170D870A005B295E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE9EB68170D870A005B295E /* Foundation.framework */; };
 		4DE9EB6E170D870A005B295E /* KATSocketShuttle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DE9EB6D170D870A005B295E /* KATSocketShuttle.h */; };
@@ -72,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330BDCB0176594CE009BD559 /* libSocketRocket.a in Frameworks */,
 				4DE9EB69170D870A005B295E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
