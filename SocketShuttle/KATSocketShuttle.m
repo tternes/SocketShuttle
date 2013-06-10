@@ -34,9 +34,9 @@
 
 @implementation KATSocketShuttle
 
--(id)initWithServerURL:(NSURL *)serverURL delegate:(id<KATSocketShuttleDelegate>)delegate {
+-(id)initWithRequest:(NSURLRequest *)request delegate:(id<KATSocketShuttleDelegate>)delegate {
     if((self = [super init])) {
-		_serverURL = serverURL;
+		_URLRequest = request;
 		_delegate = delegate;
 		
         KATLogVerbose(@"SocketService#init");
@@ -103,9 +103,9 @@
     }
     self.socketState = KATSocketStateConnecting;
     [self disconnect:NO];
-    KATLogVerbose(@"SocketService#connect serverURL = %@", self.serverURL);
+    KATLogVerbose(@"SocketService#connect serverURL = %@", self.URLRequest);
     [self startConnectingTimer];
-    _socket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:self.serverURL]];
+    _socket = [[SRWebSocket alloc] initWithURLRequest:self.URLRequest];
 	[self addObserver:self forKeyPath:@"self.socketState" options:0 context:NULL];
     _socket.delegate = self;
     [_socket open];
