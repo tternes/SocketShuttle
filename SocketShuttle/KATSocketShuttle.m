@@ -199,13 +199,16 @@ NSString *NSStringFromSocketState(KATSocketState state) {
     _tryReconnectImmediatly = YES;
     KATLogVerbose(@"socket opened: %@", webSocket);
     self.socketState = KATSocketStateConnected;
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(socketDidOpen:)])
+        [self.delegate socketDidOpen:self];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id) message {
     KATLogVerbose(@"=> %@", message);
-	if(self.delegate) {
+
+	if(self.delegate && [self.delegate respondsToSelector:@selector(socket:didReceiveMessage:)])
 		[self.delegate socket:self didReceiveMessage:message];
-	}
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
@@ -223,11 +226,28 @@ NSString *NSStringFromSocketState(KATSocketState state) {
                                                           userInfo:@{KATGameServiceConnectionErrorReasonKey: KATGameServiceConnectionErrorReasonGeneric, KATGameServiceSocketErrorKey: error}];
         self.socketState = KATSocketStateDisconnected;
     }
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(socket:didFailWithError:)])
+        [self.delegate socket:self didFailWithError:error];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
     KATLog(@"webSocket:%@ didCloseWithCode:%d reason:%@ wasClean:%d", webSocket, code, reason, wasClean);
+
     [self ensureConnected];
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(socket:didCloseWithCode:reason:wasClean:)])
+        [self.delegate socket:self didCloseWithCode:code reason:reason wasClean:wasClean];
+}
+
+#pragma mark - Setters
+
+- (void)setSocketState:(KATSocketState)socketState
+{
+    if (socketState == _socketState)
+        return;
+
+    _socketState = socketState;
 }
 
 @end
