@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>52E09302-CC89-483D-93BA-68A44D975D17</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SocketShuttle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>07B09575-7D63-4A61-97D7-F25B92DBFF1B</key>
+		<string>https://github.com/kolinkrewinkel/SocketShuttle.git</string>
+		<key>52F41F87-BD74-4A5E-9E6C-90CB67158190</key>
+		<string>https://github.com/tonymillion/Reachability.git</string>
+		<key>68628FD9-FCE7-457D-BC1A-DFC4F0F6DB59</key>
+		<string>git://github.com/square/SocketRocket.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SocketShuttle.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>07B09575-7D63-4A61-97D7-F25B92DBFF1B</key>
+		<string>../..</string>
+		<key>52F41F87-BD74-4A5E-9E6C-90CB67158190</key>
+		<string>../../Third-Party/Reachability</string>
+		<key>68628FD9-FCE7-457D-BC1A-DFC4F0F6DB59</key>
+		<string>../../Third-Party/SocketRocket</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kolinkrewinkel/SocketShuttle.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>07B09575-7D63-4A61-97D7-F25B92DBFF1B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>68628FD9-FCE7-457D-BC1A-DFC4F0F6DB59</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SocketRocket</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>07B09575-7D63-4A61-97D7-F25B92DBFF1B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SocketShuttle</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>52F41F87-BD74-4A5E-9E6C-90CB67158190</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Reachability</string>
+		</dict>
+	</array>
+</dict>
+</plist>
