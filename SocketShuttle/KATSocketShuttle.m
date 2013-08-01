@@ -10,7 +10,6 @@
 #import "Reachability.h"
 #import <SocketRocket/SRWebSocket.h>
 
-
 #ifdef DEBUG_SOCKET_SHUTTLE
 #  define KATLogVerbose NSLog
 #  define KATLogWarning NSLog
@@ -35,14 +34,16 @@
 
 @implementation KATSocketShuttle
 
--(id)initWithRequest:(NSURLRequest *)request delegate:(id<KATSocketShuttleDelegate>)delegate {
+-(id)initWithRequest:(NSURLRequest *)request delegate:(id<KATSocketShuttleDelegate>)delegate connectConditions:(KATSocketConnectCondition)connectConditions {
     if((self = [super init])) {
-		_URLRequest = request;
+    	[self addObserver:self forKeyPath:@"self.socketState" options:0 context:NULL];
+
+		_request = request;
 		_delegate = delegate;
-		
+        _connectConditions = connectConditions;
+
         KATLogVerbose(@"SocketService#init");
-        self.socketState = KATSocketStateConnecting;
-        
+
         __weak KATSocketShuttle *weakSelf = self;
         _reachability = [Reachability reachabilityForInternetConnection];
         _reachability.unreachableBlock = ^(Reachability *reachability) {
@@ -60,13 +61,17 @@
                 if (strongSelf.socketState == KATSocketStateOffline) {
                     strongSelf.socketState = KATSocketStateDisconnected;
                     [strongSelf reconnect];
+                } else if ((strongSelf.socketState == KATSocketStateConnected || strongSelf.socketState == KATSocketStateConnecting) && ![strongSelf shouldAttemptConnectionBasedOnConnectConditions]) {
+                    strongSelf.socketState = KATSocketStateDisconnected;
+                    [strongSelf disconnect];
                 }
             });
         };
         [_reachability startNotifier];
         _tryReconnectImmediatly = YES;
         _timeoutInterval = 30;
-        
+
+        self.socketState = KATSocketStateConnecting;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self connect];
         });
@@ -76,6 +81,7 @@
 
 - (void)dealloc {
     [self cancelConnectingTimer];
+    [self removeObserver:self forKeyPath:@"socketState"];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -95,7 +101,7 @@
 
 - (void)connect {
     KATLogVerbose(@"connect");
-    if(![_reachability isReachable]) {
+    if(![_reachability isReachable] || ![self shouldAttemptConnectionBasedOnConnectConditions]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:KATGameServiceConnectionErrorNotification
                                                             object:self
                                                           userInfo:@{KATGameServiceConnectionErrorReasonKey: KATGameServiceConnectionErrorReasonOffline}];
@@ -104,10 +110,9 @@
     }
     self.socketState = KATSocketStateConnecting;
     [self disconnect:NO];
-    KATLogVerbose(@"SocketService#connect serverURL = %@", self.URLRequest);
+    KATLogVerbose(@"SocketService#connect serverURL = %@", self.request);
     [self startConnectingTimer];
-    _socket = [[SRWebSocket alloc] initWithURLRequest:self.URLRequest];
-	[self addObserver:self forKeyPath:@"self.socketState" options:0 context:NULL];
+    _socket = [[SRWebSocket alloc] initWithURLRequest:self.request];
     _socket.delegate = self;
     [_socket open];
 }
@@ -191,6 +196,10 @@ NSString *NSStringFromSocketState(KATSocketState state) {
 	[_socket send:message];
 }
 
+- (BOOL)shouldAttemptConnectionBasedOnConnectConditions {
+    return _connectConditions == KATSocketConnectConditionAlways ? YES : [_reachability isReachableViaWiFi];
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark - SRWebSocketDelegate
 
@@ -243,12 +252,29 @@ NSString *NSStringFromSocketState(KATSocketState state) {
 
 #pragma mark - Setters
 
-- (void)setSocketState:(KATSocketState)socketState
-{
-    if (socketState == _socketState)
+- (void)setSocketState:(KATSocketState)socketState {
+    if (socketState == _socketState) {
         return;
+    }
 
     _socketState = socketState;
+}
+
+- (void)setRequest:(NSURLRequest *)request {
+    if (request == self.request) {
+        return;
+    }
+
+    _request = request;
+
+    if (self.socketState == KATSocketStateConnected || self.socketState == KATSocketStateConnecting) {
+        [_socket close];
+    }
+
+    _socket = nil;
+    _socket = [[SRWebSocket alloc] initWithURLRequest:request];
+    _socket.delegate = self;
+    [self ensureConnected];
 }
 
 @end

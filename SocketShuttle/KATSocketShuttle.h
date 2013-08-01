@@ -16,6 +16,11 @@ typedef enum {
     KATSocketStateDisconnected
 } KATSocketState;
 
+typedef enum {
+    KATSocketConnectConditionAlways,
+    KATSocketConnectConditionWLAN
+} KATSocketConnectCondition;
+
 
 NSString *NSStringFromSocketState(KATSocketState state);
 
@@ -34,7 +39,7 @@ static  NSString    *const     KATGameServiceSocketErrorKey                   = 
 
 @interface KATSocketShuttle : NSObject
 
--(id)initWithRequest:(NSURLRequest *)request delegate:(id<KATSocketShuttleDelegate>) delegate;
+-(id)initWithRequest:(NSURLRequest *)request delegate:(id<KATSocketShuttleDelegate>) delegate connectConditions:(KATSocketConnectCondition)connectConditions;
 
 -(void)send:(NSString *)message;
 -(void)disconnect;
@@ -44,7 +49,8 @@ static  NSString    *const     KATGameServiceSocketErrorKey                   = 
 @property (nonatomic, readonly) KATSocketState socketState;
 @property (nonatomic, assign) id <KATSocketShuttleDelegate> delegate;
 @property (nonatomic)   NSTimeInterval  timeoutInterval; // defaults to 30 seconds
-@property (nonatomic, readonly) NSURLRequest *URLRequest;
+@property (nonatomic, strong) NSURLRequest *request;
+@property (nonatomic, readonly) KATSocketConnectCondition connectConditions;
 
 @end
 
