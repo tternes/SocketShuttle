@@ -12,6 +12,11 @@
 		4DE9EB69170D870A005B295E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE9EB68170D870A005B295E /* Foundation.framework */; };
 		4DE9EB6E170D870A005B295E /* KATSocketShuttle.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4DE9EB6D170D870A005B295E /* KATSocketShuttle.h */; };
 		4DE9EB70170D870A005B295E /* KATSocketShuttle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9EB6F170D870A005B295E /* KATSocketShuttle.m */; };
+		905AF9A117BB3F40002FDE4E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905AF9A017BB3F40002FDE4E /* Cocoa.framework */; };
+		905AF9CD17BB3F83002FDE4E /* KATSocketShuttle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9EB6F170D870A005B295E /* KATSocketShuttle.m */; };
+		905AF9CE17BB3F91002FDE4E /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338D094E17640A260006496F /* SocketRocket.framework */; };
+		905AF9D017BB3FAB002FDE4E /* SocketRocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 338D094E17640A260006496F /* SocketRocket.framework */; };
+		905AF9D117BB3FD0002FDE4E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 338D09321764040F0006496F /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		905AF9CF17BB3FA1002FDE4E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				905AF9D017BB3FAB002FDE4E /* SocketRocket.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +81,14 @@
 		4DE9EB68170D870A005B295E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4DE9EB6D170D870A005B295E /* KATSocketShuttle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KATSocketShuttle.h; sourceTree = "<group>"; };
 		4DE9EB6F170D870A005B295E /* KATSocketShuttle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KATSocketShuttle.m; sourceTree = "<group>"; };
+		905AF99F17BB3F40002FDE4E /* SocketShuttle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SocketShuttle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		905AF9A017BB3F40002FDE4E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		905AF9A317BB3F40002FDE4E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		905AF9A417BB3F40002FDE4E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		905AF9A517BB3F40002FDE4E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		905AF9A817BB3F40002FDE4E /* SocketShuttleOSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SocketShuttleOSX-Info.plist"; sourceTree = "<group>"; };
+		905AF9AC17BB3F40002FDE4E /* SocketShuttleOSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocketShuttleOSX-Prefix.pch"; sourceTree = "<group>"; };
+		905AF9B517BB3F40002FDE4E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +98,15 @@
 			files = (
 				330BDCB0176594CE009BD559 /* libSocketRocket.a in Frameworks */,
 				4DE9EB69170D870A005B295E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		905AF99B17BB3F40002FDE4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				905AF9CE17BB3F91002FDE4E /* SocketRocket.framework in Frameworks */,
+				905AF9A117BB3F40002FDE4E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE9EB6A170D870A005B295E /* SocketShuttle */,
+				905AF9A617BB3F40002FDE4E /* SocketShuttleOSX */,
 				4DE9EB67170D870A005B295E /* Frameworks */,
 				4DE9EB66170D870A005B295E /* Products */,
 			);
@@ -124,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				4DE9EB65170D870A005B295E /* libSocketShuttle.a */,
+				905AF99F17BB3F40002FDE4E /* SocketShuttle.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				4DE9EB68170D870A005B295E /* Foundation.framework */,
+				905AF9A017BB3F40002FDE4E /* Cocoa.framework */,
+				905AF9B517BB3F40002FDE4E /* XCTest.framework */,
+				905AF9A217BB3F40002FDE4E /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,7 +183,36 @@
 			path = SocketShuttle;
 			sourceTree = "<group>";
 		};
+		905AF9A217BB3F40002FDE4E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				905AF9A317BB3F40002FDE4E /* Foundation.framework */,
+				905AF9A417BB3F40002FDE4E /* CoreData.framework */,
+				905AF9A517BB3F40002FDE4E /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		905AF9A617BB3F40002FDE4E /* SocketShuttleOSX */ = {
+			isa = PBXGroup;
+			children = (
+				905AF9A817BB3F40002FDE4E /* SocketShuttleOSX-Info.plist */,
+				905AF9AC17BB3F40002FDE4E /* SocketShuttleOSX-Prefix.pch */,
+			);
+			path = SocketShuttleOSX;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		905AF99C17BB3F40002FDE4E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		4DE9EB64170D870A005B295E /* SocketShuttle */ = {
@@ -165,6 +231,25 @@
 			productName = KATSocketShuttle;
 			productReference = 4DE9EB65170D870A005B295E /* libSocketShuttle.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		905AF99E17BB3F40002FDE4E /* SocketShuttleOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 905AF9CB17BB3F40002FDE4E /* Build configuration list for PBXNativeTarget "SocketShuttleOSX" */;
+			buildPhases = (
+				905AF99A17BB3F40002FDE4E /* Sources */,
+				905AF99B17BB3F40002FDE4E /* Frameworks */,
+				905AF99C17BB3F40002FDE4E /* Headers */,
+				905AF99D17BB3F40002FDE4E /* Resources */,
+				905AF9CF17BB3FA1002FDE4E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocketShuttleOSX;
+			productName = SocketShuttleOSX;
+			productReference = 905AF99F17BB3F40002FDE4E /* SocketShuttle.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -194,6 +279,7 @@
 			projectRoot = "";
 			targets = (
 				4DE9EB64170D870A005B295E /* SocketShuttle */,
+				905AF99E17BB3F40002FDE4E /* SocketShuttleOSX */,
 			);
 		};
 /* End PBXProject section */
@@ -229,6 +315,16 @@
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXResourcesBuildPhase section */
+		905AF99D17BB3F40002FDE4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4DE9EB61170D870A005B295E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -236,6 +332,15 @@
 			files = (
 				4DE9EB70170D870A005B295E /* KATSocketShuttle.m in Sources */,
 				338D093A1764040F0006496F /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		905AF99A17BB3F40002FDE4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				905AF9D117BB3FD0002FDE4E /* Reachability.m in Sources */,
+				905AF9CD17BB3F83002FDE4E /* KATSocketShuttle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +422,74 @@
 			};
 			name = Release;
 		};
+		905AF9C317BB3F40002FDE4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocketShuttleOSX/SocketShuttleOSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "SocketShuttleOSX/SocketShuttleOSX-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@loader_path/../$(EXECUTABLE_PATH)";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = SocketShuttle;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		905AF9C417BB3F40002FDE4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR_QUOTED)",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SocketShuttleOSX/SocketShuttleOSX-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "SocketShuttleOSX/SocketShuttleOSX-Info.plist";
+				LD_DYLIB_INSTALL_NAME = "@loader_path/../$(EXECUTABLE_PATH)";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = SocketShuttle;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -337,6 +510,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		905AF9CB17BB3F40002FDE4E /* Build configuration list for PBXNativeTarget "SocketShuttleOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				905AF9C317BB3F40002FDE4E /* Debug */,
+				905AF9C417BB3F40002FDE4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
