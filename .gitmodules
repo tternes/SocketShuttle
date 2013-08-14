@@ -3,4 +3,4 @@
 	url = https://github.com/tonymillion/Reachability.git
 [submodule "Third-Party/SocketRocket"]
 	path = Third-Party/SocketRocket
-	url = git://github.com/square/SocketRocket.git
+	url = https://github.com/square/SocketRocket.git
